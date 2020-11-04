@@ -1,0 +1,28 @@
+# ????????
+server:
+  port: 8080 # ???
+  servlet:
+    jsp:
+      init-parameters:
+        development: true # ????JSP???????????JSP????????
+
+# ?????????
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 200425
+    url: jdbc:mysql://localhost:3306/movie_all?characterEncoding=UTF-8&useOldAliasMetadataBehavior=true&useSSL=false
+  mvc:
+    view:
+      prefix: /WEB-INF/page/ # ?????
+      suffix: .jsp # ?????
+    static-path-pattern: /static/**
+
+# mybatis-plus ????
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.dj.movie.pojo
+  configuration:
+    map-underscore-to-camel-case: true
+
